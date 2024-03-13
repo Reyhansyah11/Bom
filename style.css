@@ -1,0 +1,206 @@
+:root{
+    /* box shadow */
+    --bx-sh1:
+    6px 6px 10px #151618,
+    -6px -6px 10px #2c3136,
+    inset 2px 2px 6px #33353b,
+    inset -3px -3px 6px #151618;
+
+    --bg4: linear-gradient(#1f1e1e);
+   /* linear-gradient(#4839b0, #e50a86) */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: hsl(0, 0%, 0%);
+}
+
+.container{
+    width: 600px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: var(--bx-sh1);
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+    color: white;
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    right: 4px;
+    left: 4px;
+    background-color: hsl(240, 9%, 14%);
+    z-index: -1;
+}
+.container::after{
+    content: '';
+    background-image: linear-gradient(hsl(340, 82%, 52%), hsl(340, 82%, 52%)), linear-gradient(hsl(267, 74%, 58%), hsl(267, 74%, 58%));
+    position: absolute;
+    height: 200%;
+    width: 200%;
+    left: -50%;
+    top: -50%;
+    z-index: -2;
+    background-repeat: no-repeat;
+    background-size: 40% 40%;
+    background-position: 0 0, 100% 100%;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.container .isi{
+    padding: 20px;
+}
+
+.container .isi .judul{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.container .isi .tebak-angka{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container .isi .input-user{
+    width: 300px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    outline: none;
+    text-align: center;
+    transition: .3s;
+}
+.container .isi .input-user:hover{
+    width: 340px
+}
+
+.container .isi .check{
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    box-shadow: 3px 3px rgb(51, 50, 50);
+    cursor: pointer;
+    margin-bottom: 20px;
+    outline: none;
+    transition: .3s;
+}
+.container .isi .check:hover{
+    width: 120px;
+}
+.container .isi .check:active{
+    box-shadow: none;
+    position: relative;
+    top: 5px
+}
+
+.container .isi .result{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media(max-width: 604px){
+    .container{
+        width: 500px;
+        height: 250px;
+    }
+    
+    .container .isi .judul{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .container .isi .tebak-angka{
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .container .isi .input-user{
+        width: 300px;
+        height: 30px;
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .container .isi .check{
+        font-size: 14px;
+    }
+
+    .container .isi .result{
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 342px){
+    .container{
+        width: 280px;
+        height: 180px;
+    }
+
+    .container .isi{
+        padding: 10px;
+        position: relative;
+        top: -5px;
+    }
+    
+    .container .isi .judul{
+        font-size: 12px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .container .isi .tebak-angka{
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .container .isi .input-user{
+        width: 180px;
+        height: 25px;
+        margin-bottom: 5px;
+        font-size: 10px;
+    }
+    .container .isi .input-user:hover{
+        width: 210px
+    }
+    
+
+    .container .isi .check{
+        font-size: 10px;   
+        width: 60px;
+        height: 18px;
+        margin-bottom: 10px;
+    }
+    .container .isi .check:hover{
+        width: 70px
+    }
+    
+
+    .container .isi .result{
+        font-size: 12px;
+    }
+}
